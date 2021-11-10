@@ -273,7 +273,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate) => {
             case 'hentai': {
                 m.reply(mess.wait)
                 let result = await hentaivid()
-                await hisoka.sendVideo(m.chat, 'https://tikporntok.com/'+result.hasil.video, `⭔ *Title :* ${result.hasil.title}\n⭔ *Views :* ${result.hasil.views}\n⭔ *Like :* ${result.hasil.like}\n⭔ *Dislike :* ${result.hasil.dislike}\n⭔ *Favorite :* ${result.hasil.favorite}\n⭔ *Upload At :* ${result.hasil.upload}\n⭔ *Category :* ${result.hasil.tags}\n⭔ ${result.hasil.desc}\n⭔ *Source :* ${result.hasil.source}`, m)
+                await hisoka.sendVideo(m.chat, result.hasil.video_1, `⭔ *Title :* ${result.hasil.title}\n⭔ *Views :* ${result.hasil.views_count}\n⭔ *Share :* ${result.hasil.share_count}\n⭔ *Category :* ${result.hasil.category}\n⭔ *Source :* ${result.hasil.link}`, m)
             }
             break
             case 'toimage': case 'toimg': {
