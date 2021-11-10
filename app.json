@@ -1,0 +1,13 @@
+{
+	"name": "Hisoka-Morrow",
+	"description": "WhatsApp Bot Using Lib Baileys",
+	"repository": "https://github.com/DikaArdnt/Hisoka-Morrow",
+	"logo": "https://node-js-sample.herokuapp.com/node.png",
+	"keywords": [
+    "WhatsApp",
+    "Bot",
+    "WhatsApp",
+    "Api",
+    "Baileys"
+  ]
+}
