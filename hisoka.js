@@ -328,7 +328,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate) => {
             break
             case 'q': case 'quoted': {
                 if (!quoted) throw 'Reply Pesannya'
-                let sendq = hisoka.serializeM(await m.getQuotedObj())
+                let sendq = await hisoka.serializeM(await m.getQuotedObj())
                 if (!sendq.quoted) throw 'Pesan Yang Anda Reply Tidak Mengandung Reply'
                 await sendq.quoted.copyNForward(m.chat, true)
             }
@@ -718,7 +718,7 @@ atau langsung ketik teksnya`)
                             return m.reply(bang)
                         }
                         try {
-                            m.reply(util.format(eval(`(async () => { ${budy.slice(3)} })()`)))
+                            m.reply(util.format(eval(`(async () => { return ${budy.slice(3)} })()`)))
                          } catch (e) {
                             m.reply(String(e))
                          }
