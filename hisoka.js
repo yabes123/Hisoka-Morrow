@@ -280,13 +280,11 @@ module.exports = hisoka = async (hisoka, m, chatUpdate) => {
                 if (!quoted) throw `Balas Video/Image Dengan Caption ${prefix + command}`
                 m.reply(mess.wait)
                 if ((isMedia && quoted.mtype === 'imageMessage') && args.length == 0) {
-                    let encmedia = await JSON.parse(JSON.stringify(m).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                    let media = await hisoka.downloadAndSaveMediaMessage(encmedia)
+                    let media = await quoted.download()
                     await hisoka.sendImageAsSticker(m.chat, media, m, { packname: text.split('|')[0] ? text.split('|')[0] : global.packname, author: text.split('|')[1] ? text.split('|')[1] : global.author })
                     fs.unlinkSync(media)
 		} else if ((isMedia && quoted.mtype === 'videoMessage') && args.length == 0) {
-                    let encmedia = await JSON.parse(JSON.stringify(m).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-                    let media = await hisoka.downloadAndSaveMediaMessage(encmedia)
+                    let media = await quoted.download()
                     await hisoka.sendVideoAsSticker(m.chat, media, m, { packname: text.split('|')[0] ? text.split('|')[0] : global.packname, author: text.split('|')[1] ? text.split('|')[1] : global.author })
                     fs.unlinkSync(media)
 		} else {
