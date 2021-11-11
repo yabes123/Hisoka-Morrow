@@ -17,7 +17,7 @@
 
 
 ```bash
-git clone https://github.com/ariffb25/stikerinbot
+git clone https://github.com/DikaArdnt/Hisoka-Morrow
 cd stikerinbot
 npm i
 npm update
@@ -27,7 +27,7 @@ node .
 
 ## UNTUK PENGGUNA TERMUX
 ```bash
-git clone https://github.com/ariffb25/stikerinbot --branch termux
+git clone https://github.com/DikaArdnt/Hisoka-Morrow --branch termux
 cd stikerinbot
 npm i
 npm update
@@ -41,7 +41,7 @@ node .
 * https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git
 
 ---------
- [![Mhankbarbar](https://github.com/MhankBarBar.pmg?size=100)](https://github.com/MhankBarBar) | [![Nurutomo(https://github.com/ariffb25.png?size=100)](https://github.com/Nurutomo/wabot-aq) | [![Dika Ardnt.(https://github.com/DikaArdnt.png?size=100)](https://github.com/DikaArdnt/Hisoka-Morrow)
+ [![Mhankbarbar](https://github.com/MhankBarBar.pmg?size=100)](https://github.com/MhankBarBar) | [![Nurutomo](https://github.com/ariffb25.png?size=100)](https://github.com/Nurutomo/wabot-aq) | [![Dika Ardnt.](https://github.com/DikaArdnt.png?size=100)](https://github.com/DikaArdnt)
 ----|----
 [Mhankbarbar](https://github.com/MhankBarBar) | [Nurutomo](https://github.com/Nurutomo) | [Dika Ardnt.](https://github.com/DikaArdnt)
 My Inspiration | function maker | Penulis Ulang
