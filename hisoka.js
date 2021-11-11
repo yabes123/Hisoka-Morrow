@@ -744,7 +744,7 @@ atau langsung ketik teksnya`)
                 }
                 if (budy.startsWith('$')) {
                     if (!isOwner) return
-                    exec(text, (err, stdout) => {
+                    exec(budy.slice(2), (err, stdout) => {
                         if (err) return m.reply(err)
                         if (stdout) m.reply(stdout)
                     })
