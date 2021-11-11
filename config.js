@@ -10,9 +10,9 @@ global.APIs = {
 
 // Apikey Website Api
 global.APIKeys = {
-	'https://api.lolhuman.xyz': 'kopit=kntlkjepit',
-	'https://api.dapuhy.ga': 'DappaAnjing',
-	'https://zenzapi.xyz': 'diKaArdNt',
+	'https://api.lolhuman.xyz': 'apikey Lhu',
+	'https://api.dapuhy.ga': 'regis dulu',
+	'https://zenzapi.xyz': 'regis dulu',
 }
 
 // Other
