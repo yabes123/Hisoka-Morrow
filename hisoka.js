@@ -746,7 +746,7 @@ atau langsung ketik teksnya`)
                     if (!isOwner) return
                     exec(text, (err, stdout) => {
                         if (err) return m.reply(err)
-                        if (stdout) return m.reply(stdout)
+                        if (stdout) m.reply(stdout)
                     })
                 }
         }
