@@ -5,6 +5,11 @@
 </p>
 <h1 align="center">Hisoka-Morrow</h1>
 
+## Set Setting 
+* set number owner & set api on [this](https://github.com/DikaArdnt/Hisoka-Morrow/blob/master/config.js) file
+* Get apikey dapuhy from [this](https://api.dapuhy.ga/)
+* Get apikey lolhuman from [this](https://api.lolhuman.xyz/)
+* Get apikey zenz from [this](https://zenzapi.xyz/)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/DikaArdnt/Hisoka-Morrow)
 
