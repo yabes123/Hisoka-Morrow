@@ -280,12 +280,16 @@ module.exports = hisoka = async (hisoka, m, chatUpdate) => {
                 if (!quoted) throw `Balas Video/Image Dengan Caption ${prefix + command}`
                 m.reply(mess.wait)
                 if ((isMedia && quoted.mtype === 'imageMessage') && args.length == 0) {
-                    let media = quoted.download()
+                    let encmedia = await JSON.parse(JSON.stringify(m).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+                    let media = await hisoka.downloadAndSaveMediaMessage(encmedia)
                     await hisoka.sendImageAsSticker(m.chat, media, m, { packname: text.split('|')[0] ? text.split('|')[0] : global.packname, author: text.split('|')[1] ? text.split('|')[1] : global.author })
-                } else if ((isMedia && quoted.mtype === 'videoMessage') && args.length == 0) {
-                    let media = quoted.download()
+                    fs.unlinkSync(media)
+		} else if ((isMedia && quoted.mtype === 'videoMessage') && args.length == 0) {
+                    let encmedia = await JSON.parse(JSON.stringify(m).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+                    let media = await hisoka.downloadAndSaveMediaMessage(encmedia)
                     await hisoka.sendVideoAsSticker(m.chat, media, m, { packname: text.split('|')[0] ? text.split('|')[0] : global.packname, author: text.split('|')[1] ? text.split('|')[1] : global.author })
-                } else {
+                    fs.unlinkSync(media)
+		} else {
                     throw `Kirim Gambar/Video Dengan Caption ${prefix + command}\nDurasi Video 1-9 Detik`
                 }
             }
