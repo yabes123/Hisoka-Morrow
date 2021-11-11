@@ -18,20 +18,55 @@
 
 ```bash
 git clone https://github.com/DikaArdnt/Hisoka-Morrow
-cd stikerinbot
+cd Hisoka-Morrow
 npm i
 npm update
 node .
 ```
 
+## FOR TERMUX/UBUNTU/SSH USER
 
-## UNTUK PENGGUNA TERMUX
 ```bash
-git clone https://github.com/DikaArdnt/Hisoka-Morrow --branch termux
-cd stikerinbot
-npm i
+apt update && apt upgrade
+apt install git -y
+apt install nodejs -y
+apt install ffmpeg -y
+apt install imagemagick -y
+git clone https://github.com/DikaArdnt/Hisoka-Morrow
+cd Hisoka-Morrow
+npm install
+```
+
+## INSTALL ON TERMUX WITH UBUNTU
+
+[ INSTALLING UBUNTU ]
+
+```bash
+apt update && apt full-upgrade
+apt install wget curl git proot-distro
+proot-distro install ubuntu
+echo "proot-distro login ubuntu" > $PREFIX/bin/ubuntu
+ubuntu
+```
+---------
+
+[ INSTALLING NODEJS & Hisoka-Morrow ]
+
+```bash
+ubuntu
+curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
+apt install -y nodejs gcc g++ make
+git clone https://github.com/DikaArdnt/Hisoka-Morrow
+cd wabot-aq
+npm install
 npm update
-node .
+```
+[ INSTALLING REQUIRED PACKAGES ]
+
+```bash
+ubuntu
+apt update && apt full-upgrade
+apt install wget curl git ffmpeg imagemagick build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev dbus-x11 ffmpeg2theora ffmpegfs ffmpegthumbnailer ffmpegthumbnailer-dbg ffmpegthumbs libavcodec-dev libavcodec-extra libavcodec-extra58 libavdevice-dev libavdevice58 libavfilter-dev libavfilter-extra libavfilter-extra7 libavformat-dev libavformat58 libavifile-0.7-bin libavifile-0.7-common libavifile-0.7c2 libavresample-dev libavresample4 libavutil-dev libavutil56 libpostproc-dev libpostproc55 graphicsmagick graphicsmagick-dbg graphicsmagick-imagemagick-compat graphicsmagick-libmagick-dev-compat groff imagemagick-6.q16hdri imagemagick-common libchart-gnuplot-perl libgraphics-magick-perl libgraphicsmagick++-q16-12 libgraphicsmagick++1-dev
 ```
 
 ## UNTUK PENGGUNA HEROKU
@@ -45,3 +80,5 @@ node .
 * [`Nurutomo/wabot-aq`](https://github.com/Nurutomo/wabot-aq)
 * [`MhankBarBar`](https://github.com/MhankBarBar/weabot)
 * [`Dika Ardnt.`](https://github.com/DikaArdnt/Hisoka-Morrow)
+
+Note: this is a script that copy pastes from someone else's script, so don't bully me om
