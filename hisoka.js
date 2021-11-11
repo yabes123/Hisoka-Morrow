@@ -276,6 +276,20 @@ module.exports = hisoka = async (hisoka, m, chatUpdate) => {
                 await hisoka.sendVideo(m.chat, result.hasil.video_1, `⭔ *Title :* ${result.hasil.title}\n⭔ *Views :* ${result.hasil.views_count}\n⭔ *Share :* ${result.hasil.share_count}\n⭔ *Category :* ${result.hasil.category}\n⭔ *Source :* ${result.hasil.link}`, m)
             }
             break
+	    case 'sticker': case 's': case 'stickergif': {
+                if (!quoted) throw `Balas Video/Image Dengan Caption ${prefix + command}`
+                m.reply(mess.wait)
+                if ((isMedia && quoted.mtype === 'imageMessage') && args.length == 0) {
+                    let media = quoted.download()
+                    await hisoka.sendImageAsSticker(m.chat, media, m, { packname: text.split('|')[0] ? text.split('|')[0] : global.packname, author: text.split('|')[1] ? text.split('|')[1] : global.author })
+                } else if ((isMedia && quoted.mtype === 'videoMessage') && args.length == 0) {
+                    let media = quoted.download()
+                    await hisoka.sendVideoAsSticker(m.chat, media, m, { packname: text.split('|')[0] ? text.split('|')[0] : global.packname, author: text.split('|')[1] ? text.split('|')[1] : global.author })
+                } else {
+                    throw `Kirim Gambar/Video Dengan Caption ${prefix + command}\nDurasi Video 1-9 Detik`
+                }
+            }
+            break
             case 'toimage': case 'toimg': {
                 if (!quoted) throw 'Reply Media!'
                 if (!/webp/.test(mime)) throw `balas stiker dengan caption *${prefix + command}*`
@@ -366,6 +380,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate) => {
 │⭔ ${prefix}toimage
 │⭔ ${prefix}tovideo
 │⭔ ${prefix}togif
+│⭔ ${prefix}sticker
 │
 └───────⭓
 
@@ -385,7 +400,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate) => {
 │
 └───────⭓
 
-┌──⭓ *Hentai Menu*
+┌──⭓ *Nsfw Menu*
 │
 │⭔ ${prefix}hentai
 │⭔ ${prefix}milf
@@ -394,7 +409,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate) => {
 │⭔ ${prefix}oneesan
 │⭔ ${prefix}shota
 │⭔ ${prefix}ass
-│⭔ ${prefix}holo
+│⭔ ${prefix}tentacle
 │⭔ ${prefix}anal
 │⭔ ${prefix}ass
 │⭔ ${prefix}boobs
