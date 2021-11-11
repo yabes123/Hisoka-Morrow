@@ -24,5 +24,4 @@ function pinterest(querry){
 		})
 	})
 }
-
 module.exports = { pinterest }
