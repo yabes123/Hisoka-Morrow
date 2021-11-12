@@ -10,6 +10,7 @@ let os = require('os')
 let { performance } = require('perf_hooks')
 let { exec, spawn, execSync } = require("child_process")
 let moment = require('moment-timezone')
+let ffmpeg = require('fluent-ffmpeg')
 let { hentaiimg, hentaivid } = require('./plugins/hentai')
 let { pinterest } = require('./plugins/search')
 
@@ -101,24 +102,9 @@ module.exports = hisoka = async (hisoka, m, chatUpdate) => {
         let command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         let isCmd = body.startsWith(prefix)
         let text = q = args.join(' ')
-        let str2Regex = str => str.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&')
-        let match = (prefix instanceof RegExp ? // RegExp Mode?
-			[[prefix.exec(m.text), prefix]] :
-			Array.isArray(prefix) ? // Array?
-            prefix.map(p => {
-              let re = p instanceof RegExp ? // RegExp in Array?
-                p :
-                new RegExp(str2Regex(p))
-              return [re.exec(m.text), re]
-            }) :
-            typeof prefix === 'string' ? // String?
-            [[new RegExp(str2Regex(prefix)).exec(m.text), new RegExp(str2Regex(prefix))]] :
-            [[[], new RegExp]]
-			).find(p => p[1])
-
+        
         // Info Server
         let used = process.memoryUsage()
-
         let private = await hisoka.chats.array.filter(v => v.jid.endsWith('s.whatsapp.net'))
         let groups = await hisoka.chats.array.filter(v => v.jid.endsWith('g.us'))
         let groupsIn = await groups.filter(v => !v.read_only)
