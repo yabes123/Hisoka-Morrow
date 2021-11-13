@@ -87,11 +87,9 @@ module.exports = hisoka = async (hisoka, m, chatUpdate) => {
             if (setting) {
                 if (!('anticall' in setting)) setting.anticall = true
                 if (!isNumber(setting.status)) setting.status = 0
-                if (!('anonymous' in setting)) setting.anonymous = true
             } else global.db.data.settings[hisoka.user.jid] = {
                 anticall: true,
                 status: 0,
-                anonymous: true,
             }
 
         } catch (err) {
@@ -188,7 +186,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate) => {
                     if (this.spam[m.sender].spam > 6) {
                         this.spam[m.sender].spam = 0
                         this.spam[m.sender].lastspam = new Date * 1
-                        hisoka.sendText(from, `Jangan Spam @${this.spam[m.sender].jid.split("@")[0]}`, mek, { contextInfo: { mentionedJid: [this.spam[m.sender].jid] } })
+                        hisoka.sendText(from, `Jangan Spam @${this.spam[m.sender].jid.split("@")[0]}`, m, { contextInfo: { mentionedJid: [this.spam[m.sender].jid] } })
                     } else {
                         this.spam[m.sender].spam = 0
                         this.spam[m.sender].lastspam = new Date * 1
