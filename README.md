@@ -70,6 +70,10 @@ chmod +x ubuntu.sh
 * [`@adiwajshing/baileys`](https://github.com/adiwajshing/Baileys)
 * [`Nurutomo/wabot-aq`](https://github.com/Nurutomo/wabot-aq)
 * [`MhankBarBar`](https://github.com/MhankBarBar/weabot)
+* [`Ariffb`](https://github.com/ariffb25/stikerinbot)
+* [`BochilGaming`](https://github.com/BochilGaming/games-wabot)
 * [`Dika Ardnt.`](https://github.com/DikaArdnt/Hisoka-Morrow)
 
 Note: this is a script that copy pastes from someone else's script, so don't bully me om
+
+Gada base base an, copas adanya
